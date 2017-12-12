@@ -444,3 +444,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh; }
+  @media (max-width: 775px) {
+    .home-wrap {
+      display: block; } }
+
+@media (max-width: 775px) {
+  .home-wrap header {
+    width: auto; } }
