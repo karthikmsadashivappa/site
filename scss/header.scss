@@ -1,0 +1,25 @@
+body {
+	background: #cdd1d5;
+}
+
+
+header {
+	width: 135px;
+	background: white;
+	padding: 30px 0;
+
+	.logo {
+		@include hide-text; 
+		position: center;
+		size: contain;
+		padding: 0;
+		margin: 0;
+		
+	}
+
+	img {
+			width: 100px;
+			height: 100px;
+			
+		}
+}
