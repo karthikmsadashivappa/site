@@ -397,11 +397,30 @@ body {
   background: #cdd1d5;
   font-family: 'Raleway', sans-serif; }
 
+.home-wrap .mobile-nav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+  padding: 30px 0px 20px 0px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .home-wrap .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .home-wrap .mobile-nav ul li {
+      text-align: center;
+      margin-bottom: 10px; }
+
 .home-wrap header {
   width: 150px;
   background: white;
   padding: 0 0 30px 0; }
   .home-wrap header .header-position {
+    width: auto;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -417,9 +436,18 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    .home-wrap header .header-position img {
-      width: 170px;
-      height: 170px; }
+    .home-wrap header .header-position .logo {
+      overflow: hidden;
+      text-indent: 101%;
+      white-space: nowrap;
+      max-width: 135px;
+      background-image: url("/assets/images/logo.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 80px;
+      padding: 0;
+      margin: 0; }
     .home-wrap header .header-position .site-nav ul {
       list-style: none;
       margin: 20px 0;
@@ -438,6 +466,40 @@ body {
       padding: 0 20px 0 0;
       text-decoration: none;
       color: #263986; }
+    .home-wrap header .header-position .mobile-nav-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      cursor: pointer; }
+      .home-wrap header .header-position .mobile-nav-toggle span, .home-wrap header .header-position .mobile-nav-toggle span:before, .home-wrap header .header-position .mobile-nav-toggle span:after {
+        content: "";
+        display: block;
+        height: 2px;
+        background: #333;
+        width: 100%;
+        position: relative;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+      .home-wrap header .header-position .mobile-nav-toggle span:before {
+        top: 13px; }
+      .home-wrap header .header-position .mobile-nav-toggle span:after {
+        top: -15px; }
+      .home-wrap header .header-position .mobile-nav-toggle.is-open span {
+        background: transparent; }
+      .home-wrap header .header-position .mobile-nav-toggle.is-open span:before,
+      .home-wrap header .header-position .mobile-nav-toggle.is-open span:after {
+        -webkit-transform-origin: center;
+                transform-origin: center;
+        -webkit-transform: rotate(46deg);
+                transform: rotate(46deg);
+        top: 0; }
+      .home-wrap header .header-position .mobile-nav-toggle.is-open span:after {
+        -webkit-transform: rotate(-46deg);
+                transform: rotate(-46deg); }
 
 .home-wrap {
   display: -webkit-box;
@@ -449,5 +511,31 @@ body {
       display: block; } }
 
 @media (max-width: 775px) {
+  .home-wrap .mobile-nav.is-open {
+    display: block;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
   .home-wrap header {
-    width: auto; } }
+    width: auto;
+    padding: 20px 0; }
+    .home-wrap header .header-position {
+      width: auto;
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .home-wrap header .header-position .site-nav, .home-wrap header .header-position .email-link {
+        display: none; }
+      .home-wrap header .header-position .logo {
+        height: 50px; }
+      .home-wrap header .header-position .mobile-nav-toggle {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
